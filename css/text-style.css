@@ -1,0 +1,22 @@
+.prompt-text {
+    font-size: 13px;
+    color: #4b4b4b;
+}
+
+.prompt-text-small {
+    font-size: 11px;
+    color: #4b4b4b;
+}
+
+.title-text {
+    color: black;
+    font-size: 36px;
+    line-height: 64px;
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+}

@@ -29,6 +29,10 @@ html {
     background-attachment: fixed;    /* 固定背景，滚动时不动（可选） */
 }
 
+* {
+    margin: 0;
+}
+
 /* --- Row 的对齐映射 (控制 justify-content 和 align-items) --- */
 layout-row[horizontal-arrangement="Start"]        { justify-content: flex-start; }
 layout-row[horizontal-arrangement="Center"]       { justify-content: center; }

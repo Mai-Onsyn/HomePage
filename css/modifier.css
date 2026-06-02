@@ -1,0 +1,12 @@
+.fill-max-size {
+    width: 100%;
+    height: 100%;
+}
+
+.fill-max-width {
+    width: 100%;
+}
+
+.fill-max-height {
+    height: 100%;
+}

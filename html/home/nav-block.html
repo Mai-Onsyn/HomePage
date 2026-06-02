@@ -1,10 +1,4 @@
 <style>
-    .section-title {
-        font-size: 14px;
-        line-height: 16px;
-        margin: 0;
-    }
-
     .nav-card {
         background-color: transparent;
         cursor: pointer;
@@ -24,64 +18,108 @@
         box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
     }
 
-    .nav-icon-image {
-        --icon-url: url('');
-        --icon-color: #3b6ef3;
-        --icon-size: 32px;
+    .nav-icon-spread {
+        position: relative;
+        --spread-color: var(#BC8F8F);
+    }
 
-        width: var(--icon-size);
-        height: var(--icon-size);
-        display: inline-block;
+    .nav-icon-spread::before {
+        content: "";
+        position: absolute;
 
-        /* 1. 颜色由背景色决定 */
-        background-color: var(--icon-color);
+        --circle-radius: 20px;
+        width: calc(var(--circle-radius) * 2);
+        height: calc(var(--circle-radius) * 2);
 
-        /* 2. 图片路径由遮罩变量决定 */
-        -webkit-mask-image: var(--icon-url);
-        mask-image: var(--icon-url);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-        /* 3. 固定的遮罩基础设置 */
-        -webkit-mask-size: contain;
-        mask-size: contain;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        mask-position: center;
+        background-color: var(--spread-color);
+        border-radius: 50%;
+
+        filter: blur(20px);
+        z-index: 0;
+        pointer-events: none;
     }
 </style>
 
 <layout-row class="genric-card" style="width: 960px; height: 200px;">
     <horizontal-spacer size="24px"></horizontal-spacer>
-    <layout-column style="width: 100%; height: 100%">
+    <layout-column class="fill-max-size">
         <vertical-spacer size="16px"></vertical-spacer>
         <p class="section-title">MAIN NAVIGATION</p>
-        <p class="section-title">指路牌</p>
+        <p class="section-title">导航</p>
         <vertical-spacer size="16px"></vertical-spacer>
 
-        <layout-row gap="16px" style="width: 100%; height: 100%">
-            <layout-column weight="1" class="genric-card nav-card" padding="16px">
-                <layout-row>
-                    <div class="nav-icon-image" style="--icon-url: url('../../assets/icon/folder.png')"></div>
-                </layout-row>
-            </layout-column>
+        <layout-row gap="16px" class="fill-max-size">
+            <layout-box weight="1" class="genric-card nav-card" padding="8px">
+                <layout-column align-self="Center">
+                    <layout-row gap="16px" vertical-alignment="Center">
+                        <div class="nav-icon-spread" style="--spread-color: #6C5CE7">
+                            <object data="../../assets/icon/folder.svg" type="image/svg+xml" width="28" height="28"></object>
+                        </div>
+                        <layout-column>
+                            <p class="section-title">作品集</p>
+                            <p class="prompt-text-small">PORTFOLIO</p>
+                        </layout-column>
+                    </layout-row>
+                    <vertical-spacer size="8px"></vertical-spacer>
+                    <p align-self="Center" class="prompt-text">探索精彩作品</p>
+                </layout-column>
+                <p align-self="BottomEnd" class="prompt-text" style="line-height: 10px">→</p>
+            </layout-box>
 
-            <layout-column weight="1" class="genric-card nav-card" padding="16px">
-                <layout-row>
-                    <div class="nav-icon-image" style="--icon-url: url('../../assets/icon/folder.png')"></div>
-                </layout-row>
-            </layout-column>
+            <layout-box weight="1" class="genric-card nav-card" padding="8px">
+                <layout-column align-self="Center">
+                    <layout-row gap="16px" vertical-alignment="Center">
+                        <div class="nav-icon-spread" style="--spread-color: #2D6AFF">
+                            <object data="../../assets/icon/blog.svg" type="image/svg+xml" width="28" height="28"></object>
+                        </div>
+                        <layout-column>
+                            <p class="section-title">博客</p>
+                            <p class="prompt-text-small">BLOG</p>
+                        </layout-column>
+                    </layout-row>
+                    <vertical-spacer size="8px"></vertical-spacer>
+                    <p align-self="Center" class="prompt-text">记录思考，技术与生活</p>
+                </layout-column>
+                <p align-self="BottomEnd" class="prompt-text" style="line-height: 10px">→</p>
+            </layout-box>
 
-            <layout-column weight="1" class="genric-card nav-card" padding="16px">
-                <layout-row>
-                    <div class="nav-icon-image" style="--icon-url: url('../../assets/icon/folder.png')"></div>
-                </layout-row>
-            </layout-column>
+            <layout-box weight="1" class="genric-card nav-card" padding="8px">
+                <layout-column align-self="Center">
+                    <layout-row gap="16px" vertical-alignment="Center">
+                        <div class="nav-icon-spread" style="--spread-color: #10AC84">
+                            <object data="../../assets/icon/discussion.svg" type="image/svg+xml" width="28" height="28"></object>
+                        </div>
+                        <layout-column>
+                            <p class="section-title">留言板</p>
+                            <p class="prompt-text-small">GUESTBOOK</p>
+                        </layout-column>
+                    </layout-row>
+                    <vertical-spacer size="8px"></vertical-spacer>
+                    <p align-self="Center" class="prompt-text">留下你宝贵的建议</p>
+                </layout-column>
+                <p align-self="BottomEnd" class="prompt-text" style="line-height: 10px">→</p>
+            </layout-box>
 
-            <layout-column weight="1" class="genric-card nav-card" padding="16px">
-                <layout-row>
-                    <div class="nav-icon-image" style="--icon-url: url('../../assets/icon/folder.png')"></div>
-                </layout-row>
-            </layout-column>
+            <layout-box weight="1" class="genric-card nav-card" padding="8px">
+                <layout-column align-self="Center">
+                    <layout-row gap="16px" vertical-alignment="Center">
+                        <div class="nav-icon-spread" style="--spread-color: #FF9F43">
+                            <object data="../../assets/icon/wrench.svg" type="image/svg+xml" width="28" height="28"></object>
+                        </div>
+                        <layout-column>
+                            <p class="section-title">工具箱</p>
+                            <p class="prompt-text-small">TOOLKIT</p>
+                        </layout-column>
+                    </layout-row>
+                    <vertical-spacer size="8px"></vertical-spacer>
+                    <p align-self="Center" class="prompt-text">有趣且实用的分享</p>
+                </layout-column>
+                <p align-self="BottomEnd" class="prompt-text" style="line-height: 10px">→</p>
+            </layout-box>
 
             <horizontal-spacer siz="8px"></horizontal-spacer>
         </layout-row>
