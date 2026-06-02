@@ -1,0 +1,88 @@
+/* 必须显式声明为块级，否则部分浏览器下高宽和外边距会失效 */
+layout-row, layout-column {
+    display: block;
+    box-sizing: border-box;
+}
+layout-row, layout-column {
+    gap: var(--layout-gap, 0px);
+}
+
+/*horizontal-spacer, vertical-spacer {*/
+/*    box-sizing: border-box;*/
+/*    pointer-events: none; !* Spacer 只是占位符，不响应鼠标事件 *!*/
+/*    background: transparent; !* 确保是透明的 *!*/
+/*}*/
+
+/*html {*/
+/*    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%),*/
+/*    repeating-linear-gradient(45deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 8px);*/
+/*    background-blend-mode: overlay;*/
+/*}*/
+
+html {
+    /*background-image: url('https://t.alcy.cc/pc');*/
+    background-color: blanchedalmond;
+    background-size: cover;          /* 图片铺满整个窗口，可能裁剪边缘 */
+    background-repeat: no-repeat;    /* 不平铺 */
+    background-position: center;     /* 居中显示 */
+    background-attachment: fixed;    /* 固定背景，滚动时不动（可选） */
+}
+
+/* --- Row 的对齐映射 (控制 justify-content 和 align-items) --- */
+layout-row[horizontal-arrangement="Start"]        { justify-content: flex-start; }
+layout-row[horizontal-arrangement="Center"]       { justify-content: center; }
+layout-row[horizontal-arrangement="End"]          { justify-content: flex-end; }
+layout-row[horizontal-arrangement="SpaceBetween"] { justify-content: space-between; }
+layout-row[horizontal-arrangement="SpaceAround"]  { justify-content: space-around; }
+
+layout-row[vertical-alignment="Top"]    { align-items: flex-start; }
+layout-row[vertical-alignment="Center"] { align-items: center; }
+layout-row[vertical-alignment="Bottom"] { align-items: flex-end; }
+
+
+/* --- Column 的对齐映射 --- */
+layout-column[vertical-arrangement="Top"]          { justify-content: flex-start; }
+layout-column[vertical-arrangement="Center"]       { justify-content: center; }
+layout-column[vertical-arrangement="Bottom"]       { justify-content: flex-end; }
+layout-column[vertical-arrangement="SpaceBetween"] { justify-content: space-between; }
+layout-column[vertical-arrangement="SpaceAround"]  { justify-content: space-around; }
+
+layout-column[horizontal-alignment="Start"]  { align-items: flex-start; }
+layout-column[horizontal-alignment="Center"] { align-items: center; }
+layout-column[horizontal-alignment="End"]    { align-items: flex-end; }
+
+
+/* --- Box 的对齐映射 (九宫格) --- */
+layout-box {
+    display: grid;
+    box-sizing: border-box;
+}
+
+/* 让 Box 内部的所有直接子元素默认叠在第一行第一列 */
+layout-box > * {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+/* --- 子元素自定义对齐 (Modifier.align) --- */
+[align-self="TopStart"]      { justify-self: start;  align-self: start; }
+[align-self="TopCenter"]     { justify-self: center; align-self: start; }
+[align-self="TopEnd"]        { justify-self: end;    align-self: start; }
+
+[align-self="CenterStart"]   { justify-self: start;  align-self: center; }
+[align-self="Center"]        { justify-self: center; align-self: center; }
+[align-self="CenterEnd"]     { justify-self: end;    align-self: center; }
+
+[align-self="BottomStart"]   { justify-self: start;  align-self: end; }
+[align-self="BottomCenter"]  { justify-self: center; align-self: end; }
+[align-self="BottomEnd"]     { justify-self: end;    align-self: end; }
+
+
+layout-box[alignment="TopStart"]      { place-items: start start; }
+layout-box[alignment="TopCenter"]     { place-items: start center; }
+layout-box[alignment="TopEnd"]        { place-items: start end; }
+layout-box[alignment="CenterStart"]   { place-items: center start; }
+layout-box[alignment="Center"]        { place-items: center center; }
+layout-box[alignment="CenterEnd"]     { place-items: center end; }
+layout-box[alignment="BottomStart"]   { place-items: end start; }
+layout-box[alignment="BottomCenter"]  { place-items: end center; }
+layout-box[alignment="BottomEnd"]     { place-items: end end; }

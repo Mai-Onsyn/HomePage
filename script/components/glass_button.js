@@ -1,0 +1,46 @@
+class GlassButton extends HTMLElement {
+    constructor() {
+        super();
+        // 1. 开启 Shadow DOM
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        const width = this.getAttribute('width') || '48px';
+        const height = this.getAttribute('height') || '36px';
+        const color = this.getAttribute('color') || '#ffffff';
+
+        // 2. 将样式和结构完全封装在 Shadow 内
+        this.shadowRoot.innerHTML = `
+            <style>
+                :host {
+                    display: inline-block;
+                }
+                button {
+                    position: relative;
+                    overflow: hidden;
+                    font-size: 12pt;
+                    font-weight: 500;
+                    width: ${width};
+                    height: ${height};
+                    color: ${color};
+                    background-color: rgb(255 255 255 / 0);
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    outline: none;
+                    user-select: none;
+                    transition: background-color 0.4s;
+                }
+                button:hover {
+                    background-color: rgb(128 128 128 / 0.5);
+                }
+                button:active {
+                    background-color: rgb(128 128 128 / 0.7);
+                }
+            </style>
+            <button><slot></slot></button>
+        `;
+    }
+}
+customElements.define('glass-button', GlassButton);
