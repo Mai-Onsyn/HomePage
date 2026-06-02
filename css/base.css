@@ -1,6 +1,6 @@
 /* 必须显式声明为块级，否则部分浏览器下高宽和外边距会失效 */
 layout-row, layout-column {
-    display: block;
+    /*display: block;*/
     box-sizing: border-box;
 }
 layout-row, layout-column {
@@ -20,9 +20,9 @@ layout-row, layout-column {
 /*}*/
 
 html {
-    background-image: url("../assets/pc.png");
     /*background-image: url('https://t.alcy.cc/pc');*/
-    /*background-color: #414d4b;*/
+    background-image: url("../assets/images/pc.png");
+    /*background-color: #000000;*/
     background-size: cover;          /* 图片铺满整个窗口，可能裁剪边缘 */
     background-repeat: no-repeat;    /* 不平铺 */
     background-position: center;     /* 居中显示 */
@@ -76,6 +76,15 @@ layout-box > * {
 [align-self="BottomStart"]   { justify-self: start;  align-self: end; }
 [align-self="BottomCenter"]  { justify-self: center; align-self: end; }
 [align-self="BottomEnd"]     { justify-self: end;    align-self: end; }
+
+layout-row > [align-self="Top"]    { align-self: flex-start; }
+layout-row > [align-self="Center"] { align-self: center; }
+layout-row > [align-self="Bottom"] { align-self: flex-end; }
+
+/* --- Column 内部的子元素独立水平对齐 (Modifier.align) --- */
+layout-column > [align-self="Start"]  { align-self: flex-start; }
+layout-column > [align-self="Center"] { align-self: center; }
+layout-column > [align-self="End"]    { align-self: flex-end; }
 
 
 layout-box[alignment="TopStart"]      { place-items: start start; }

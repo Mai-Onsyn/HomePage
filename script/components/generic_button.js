@@ -7,6 +7,7 @@ class GlassButton extends HTMLElement {
     connectedCallback() {
         const width = this.getAttribute('width') || '48px';
         const height = this.getAttribute('height') || '36px';
+        const border_radius = this.getAttribute('border-radius' || '6px')
         const color = this.getAttribute('color') || '#000000';
 
         // 2. 将样式和结构完全封装在 Shadow 内
@@ -25,11 +26,15 @@ class GlassButton extends HTMLElement {
                     color: ${color};
                     background-color: rgb(255 255 255 / 0);
                     border: none;
-                    border-radius: 6px;
+                    border-radius: ${border_radius};
                     cursor: pointer;
                     outline: none;
                     user-select: none;
                     transition: background-color 0.4s;
+                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
                 button:hover {
                     background-color: rgb(128 128 128 / 0.5);
@@ -37,6 +42,11 @@ class GlassButton extends HTMLElement {
                 button:active {
                     background-color: rgb(128 128 128 / 0.7);
                 }
+                
+                ::slotted(object), ::slotted(img), ::slotted(svg) {
+            display: block;
+            pointer-events: none; /* 防止 object 劫持按钮的点击/Hover事件 */
+        }
             </style>
             <button><slot></slot></button>
         `;
