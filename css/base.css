@@ -20,8 +20,9 @@ layout-row, layout-column {
 /*}*/
 
 html {
+    background-image: url("../assets/pc.png");
     /*background-image: url('https://t.alcy.cc/pc');*/
-    background-color: blanchedalmond;
+    /*background-color: #414d4b;*/
     background-size: cover;          /* 图片铺满整个窗口，可能裁剪边缘 */
     background-repeat: no-repeat;    /* 不平铺 */
     background-position: center;     /* 居中显示 */

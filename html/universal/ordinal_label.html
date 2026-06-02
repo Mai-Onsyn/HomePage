@@ -1,0 +1,35 @@
+<style>
+    .bookmark {
+        /* ==================== 1. 基础尺寸与排版 ==================== */
+        /*width: 200px;*/
+        /*height: 300px;*/
+        padding: 16px;
+        box-sizing: border-box;
+
+        /* 书签自身的背景色（可以换成任意颜色或图片） */
+        background: linear-gradient(135deg, rgb(0 187 255 / 0.13) 0%, #00000000 100%);
+        color: white;
+
+        /* ==================== 2. 右侧半透明边框 ==================== */
+        /* 只给右侧加边框，使用 rgba 控制半透明度 */
+        border-right: 4px solid rgba(255, 255, 255, 0.4);
+
+        /* ==================== 3. 核心：三面透明渐变遮罩 ==================== */
+        /* 通过组合三个线性渐变，分别控制上、左、下的透明度 */
+        -webkit-mask-image:
+                linear-gradient(to bottom, transparent 0%, black 20%), /* 顶部边缘淡入，到 15% 处完全不透明 */
+                linear-gradient(to right, transparent 0%, black 50%),  /* 左侧边缘淡入，到 10% 处完全不透明 */
+                linear-gradient(to top, transparent 0%, black 60%);    /* 底部边缘淡入，到 15% 处完全不透明 */
+
+        /* 必须复合这三个遮罩，取它们的交集（source-in） */
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+
+        /* 确保遮罩覆盖整个组件 */
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+</style>
+<layout-row class="bookmark" style="width: 100px; height: 400px">
+    text
+</layout-row>

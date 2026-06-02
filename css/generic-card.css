@@ -1,5 +1,5 @@
 .genric-card {
-    background: rgba(255, 255, 255, 0.45);
+    background: rgb(224 249 255 / 0.45);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 4px;

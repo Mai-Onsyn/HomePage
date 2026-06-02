@@ -1,14 +1,13 @@
 class GlassButton extends HTMLElement {
     constructor() {
         super();
-        // 1. 开启 Shadow DOM
         this.attachShadow({ mode: 'open' });
     }
 
     connectedCallback() {
         const width = this.getAttribute('width') || '48px';
         const height = this.getAttribute('height') || '36px';
-        const color = this.getAttribute('color') || '#ffffff';
+        const color = this.getAttribute('color') || '#000000';
 
         // 2. 将样式和结构完全封装在 Shadow 内
         this.shadowRoot.innerHTML = `
@@ -43,4 +42,4 @@ class GlassButton extends HTMLElement {
         `;
     }
 }
-customElements.define('glass-button', GlassButton);
+customElements.define('generic-button', GlassButton);
