@@ -64,6 +64,11 @@ layout-box > * {
     grid-area: 1 / 1 / 2 / 2;
 }
 
+[weight="1"] {
+    flex: 1 1 0;
+    width: 0; /* 极其关键：防止内部大文本或长图片撑开组件，确保绝对等宽 */
+}
+
 /* --- 子元素自定义对齐 (Modifier.align) --- */
 [align-self="TopStart"]      { justify-self: start;  align-self: start; }
 [align-self="TopCenter"]     { justify-self: center; align-self: start; }

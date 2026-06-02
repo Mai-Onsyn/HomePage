@@ -6,15 +6,17 @@ class OrdinalLabel extends HTMLElement {
 
     connectedCallback() {
         const text = this.getAttribute("text") || "undefine";
+        const flip = this.getAttribute('flip') === "true";
         this.shadowRoot.innerHTML = `
         <link  rel="stylesheet" href="../../css/base.css">
         <script src="./layout.js"></script>
         <style>            
             .bookmark-base {
                 position: relative;
-                /*padding: 16px;*/
                 box-sizing: border-box;
                 z-index: 0;
+                
+                --bg-transform: ${flip ? 'scaleX(-1)' : 'none'};
             }
         
             .bookmark-base::before {
@@ -26,7 +28,7 @@ class OrdinalLabel extends HTMLElement {
                 bottom: 0;
                 z-index: -1;
         
-                background: white;/*linear-gradient(#ffffff 0%, #ffffff 100%);*/
+                background: white;
         
                 -webkit-mask-image:
                         linear-gradient(to bottom, transparent 0%, #3b6ef3c0 15%),
@@ -38,15 +40,17 @@ class OrdinalLabel extends HTMLElement {
         
                 -webkit-mask-size: 100% 100%;
                 mask-size: 100% 100%;
+                
+                transform: var(--bg-transform);
             }
         
             .bookmark-base::after {
                 content: '';
                 position: absolute;
                 top: 0;
-                right: 0;
+                ${flip ? "left" : "right"}: 0;
                 bottom: 0;
-                width: 0.5px;
+                width: 1px;
                 z-index: 1;
                 background: linear-gradient(to bottom,
                     #3b6ef300 0%,
@@ -54,6 +58,11 @@ class OrdinalLabel extends HTMLElement {
                     #ffffff80 11%,
                     transparent 100%
                 );
+            }
+            
+            .bookmark-base[flip="true"]::after {
+                right: auto;
+                left: 0;
             }
         
             .point {
@@ -72,7 +81,7 @@ class OrdinalLabel extends HTMLElement {
             }
         </style>
         
-        <layout-column horizontal-alignment="Center" gap="0px" class="bookmark-base" style="width: 56px; height: 100%;">
+        <layout-column horizontal-alignment="Center" gap="0px" class="bookmark-base" style="width: 48px; height: 100%;">
             <p style="color: black; font-size: 10pt; margin: 0; padding-top: 70%;">${text}</p>
             <div class="point"></div>
             <div class="ray"></div>

@@ -1,4 +1,91 @@
-<layout-row class="genric-card" style="width: 800px; height: 200px;">
-    <ordinal-label text="02"></ordinal-label>
-    <generic-button width = 72px>ClickMe</generic-button>
+<style>
+    .section-title {
+        font-size: 14px;
+        line-height: 16px;
+        margin: 0;
+    }
+
+    .nav-card {
+        background-color: transparent;
+        cursor: pointer;
+        box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
+
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .nav-card:hover {
+        transform: scale(1.04) translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-card:active {
+        transform: scale(1.02) translateY(-4px);
+        box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-icon-image {
+        --icon-url: url('');
+        --icon-color: #3b6ef3;
+        --icon-size: 32px;
+
+        width: var(--icon-size);
+        height: var(--icon-size);
+        display: inline-block;
+
+        /* 1. 颜色由背景色决定 */
+        background-color: var(--icon-color);
+
+        /* 2. 图片路径由遮罩变量决定 */
+        -webkit-mask-image: var(--icon-url);
+        mask-image: var(--icon-url);
+
+        /* 3. 固定的遮罩基础设置 */
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+    }
+</style>
+
+<layout-row class="genric-card" style="width: 960px; height: 200px;">
+    <horizontal-spacer size="24px"></horizontal-spacer>
+    <layout-column style="width: 100%; height: 100%">
+        <vertical-spacer size="16px"></vertical-spacer>
+        <p class="section-title">MAIN NAVIGATION</p>
+        <p class="section-title">指路牌</p>
+        <vertical-spacer size="16px"></vertical-spacer>
+
+        <layout-row gap="16px" style="width: 100%; height: 100%">
+            <layout-column weight="1" class="genric-card nav-card" padding="16px">
+                <layout-row>
+                    <div class="nav-icon-image" style="--icon-url: url('../../assets/icon/folder.png')"></div>
+                </layout-row>
+            </layout-column>
+
+            <layout-column weight="1" class="genric-card nav-card" padding="16px">
+                <layout-row>
+                    <div class="nav-icon-image" style="--icon-url: url('../../assets/icon/folder.png')"></div>
+                </layout-row>
+            </layout-column>
+
+            <layout-column weight="1" class="genric-card nav-card" padding="16px">
+                <layout-row>
+                    <div class="nav-icon-image" style="--icon-url: url('../../assets/icon/folder.png')"></div>
+                </layout-row>
+            </layout-column>
+
+            <layout-column weight="1" class="genric-card nav-card" padding="16px">
+                <layout-row>
+                    <div class="nav-icon-image" style="--icon-url: url('../../assets/icon/folder.png')"></div>
+                </layout-row>
+            </layout-column>
+
+            <horizontal-spacer siz="8px"></horizontal-spacer>
+        </layout-row>
+        <vertical-spacer size="24px"></vertical-spacer>
+    </layout-column>
+    <ordinal-label text="02" flip="true"></ordinal-label>
 </layout-row>

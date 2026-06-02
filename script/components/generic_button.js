@@ -7,10 +7,9 @@ class GlassButton extends HTMLElement {
     connectedCallback() {
         const width = this.getAttribute('width') || '48px';
         const height = this.getAttribute('height') || '36px';
-        const border_radius = this.getAttribute('border-radius' || '6px')
+        const border_radius = this.getAttribute('border-radius') || '6px';
         const color = this.getAttribute('color') || '#000000';
 
-        // 2. 将样式和结构完全封装在 Shadow 内
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
@@ -44,9 +43,9 @@ class GlassButton extends HTMLElement {
                 }
                 
                 ::slotted(object), ::slotted(img), ::slotted(svg) {
-            display: block;
-            pointer-events: none; /* 防止 object 劫持按钮的点击/Hover事件 */
-        }
+                    display: block;
+                    pointer-events: none;
+                }
             </style>
             <button><slot></slot></button>
         `;
