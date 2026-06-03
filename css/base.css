@@ -73,6 +73,26 @@ layout-box > * {
     width: 0; /* 极其关键：防止内部大文本或长图片撑开组件，确保绝对等宽 */
 }
 
+layout-row[scrollable="true"] {
+    overflow-x: auto;       /* 允许横向溢出滚动 */
+    overflow-y: hidden;     /* 禁止垂直方向滚动 */
+    max-width: 100%;        /* 限制最大宽度为父容器宽度 */
+    flex-wrap: nowrap;      /* 强制不换行 */
+}
+
+/* 极其重要：当 Row 可滚动时，内部所有子元素绝对不能被压缩 */
+layout-row[scrollable="true"] > * {
+    flex-shrink: 0;
+}
+
+/* 选填：如果你想隐藏那个丑陋的系统滚动条，可以加上这段 */
+/*layout-row[scrollable="true"]::-webkit-scrollbar {*/
+/*    display: none; !* Chrome, Safari, Opera *!*/
+/*}*/
+layout-row[scrollable="true"] {
+    scrollbar-width: none; /* Firefox */
+}
+
 /* --- 子元素自定义对齐 (Modifier.align) --- */
 [align-self="TopStart"]      { justify-self: start;  align-self: start; }
 [align-self="TopCenter"]     { justify-self: center; align-self: start; }
