@@ -1,0 +1,38 @@
+<layout-box class="genric-card" style="width: 960px; height: 250px;">
+    <layout-row vertical-alignment="Center" padding="24px">
+        <layout-column style="width: 50%">
+            <p class="section-title" style="color: #3b6ef3">WORKS</p>
+            <p class="title-text" style="font-size: 30px">作品集</p>
+            <p class="body-text">这里收录了我在学习和工作中宪成的项目</p>
+            <p class="body-text">涵盖Web开发、工具、设计以及一些实验性探索</p>
+            <vertical-spacer size="24px"></vertical-spacer>
+
+            <layout-row width="100%">
+                <layout-row gap="12px" vertical-alignment="Center">
+                    <object data="../../assets/icon/envolop.svg" type="image/svg+xml" width="16" height="16"></object>
+                    <p class="prompt-text">共 4 个项目</p>
+                </layout-row>
+                <horizontal-spacer size="32px"></horizontal-spacer>
+                <layout-row gap="12px" vertical-alignment="Center">
+                    <object data="../../assets/icon/calendar.svg" type="image/svg+xml" width="16" height="16"></object>
+                    <p class="prompt-text">最后更新：2026-05</p>
+                </layout-row>
+            </layout-row>
+        </layout-column>
+
+        <div class="github-card genric-card">
+            <div class="card-header">
+                <layout-row vertical-alignment="Center" gap="8px">
+                    <object data="../../assets/icon/github.svg" type="image/svg+xml" width="16" height="16"></object>
+                    <span class="section-title-small">GitHub Activity</span>
+                </layout-row>
+                <span class="prompt-text">过去半年 <strong id="stats-count">--</strong> 次贡献</span>
+            </div>
+
+            <div class="heatmap-scroll">
+                <svg id="heatmapSvg"></svg>
+            </div>
+        </div>
+    </layout-row>
+    <solid-book-mark text="01" style="transform: translate(-50px, 0)"></solid-book-mark>
+</layout-box>

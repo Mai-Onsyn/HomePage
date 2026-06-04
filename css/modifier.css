@@ -10,3 +10,17 @@
 .fill-max-height {
     height: 100%;
 }
+
+.query-more-button {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.query-more-button object {
+    transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.query-more-button:hover object {
+    transform: scale(1.3);
+}

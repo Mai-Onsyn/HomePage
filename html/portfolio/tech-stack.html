@@ -1,0 +1,55 @@
+<style>
+    .tech-grid-box {
+        display: flex;
+        flex-wrap: wrap;           /* 关键 1：允许内容放不下时自动换行 */
+        justify-content: flex-start; /* 关键 2：从左到右依次排列 */
+        align-items: stretch;      /* 关键 3：让同一行的元素高度自动对齐（哪怕内容长短不一） */
+
+        gap: 16px;                 /* 控制网格之间的横向、纵向间距 */
+        padding: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+</style>
+
+<layout-box style="width: 960px; height: 200px;">
+    <layout-row gap="16px">
+        <layout-column class="genric-card" style="width: 50%; height: 100%" padding="16px" gap="16px">
+            <span class="section-title">TECH STACK</span>
+            <div class="tech-grid-box fill-max-size">
+                <tech-stack-item
+                    icon="../assets/icon/java.svg"
+                    name="Java">
+                </tech-stack-item>
+                <tech-stack-item
+                    icon="../assets/icon/kotlin.svg"
+                    name="Kotlin">
+                </tech-stack-item>
+                <tech-stack-item
+                    icon="../assets/icon/compose-multiplatform.svg"
+                    name="Compose Multiplatform">
+                </tech-stack-item>
+                <tech-stack-item
+                    icon="../assets/icon/cpp.svg"
+                    name="C++23">
+                </tech-stack-item>
+                <tech-stack-item
+                    icon="../assets/icon/github.svg"
+                    name="JavaFX">
+                </tech-stack-item>
+                <tech-stack-item
+                    icon="../assets/icon/git.svg"
+                    name="Git">
+                </tech-stack-item>
+                <tech-stack-item
+                    icon="../assets/icon/sqlite.svg"
+                    name="Sqlite">
+                </tech-stack-item>
+            </div>
+        </layout-column>
+        <layout-column class="genric-card" style="width: 50%; height: 100%">
+
+        </layout-column>
+    </layout-row>
+    <solid-book-mark text="02" style="transform: translate(-50px, 0)"></solid-book-mark>
+</layout-box>

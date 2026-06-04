@@ -5,7 +5,7 @@ class ArticleCard extends HTMLElement {
     }
 
     connectedCallback() {
-        const imgSrc = this.getAttribute('image') || '';
+        const imgSrc = this.getAttribute('image') || 'https://i2.hdslb.com/bfs/article/96d2b3d2a72e6497a011c885ab9245c51507ce18.png@470w_628h_1c.avif';
         const titleText = this.getAttribute('title') || 'No Titled';
         const descText = this.getAttribute('desc') || 'No Information';
         const dateText = this.getAttribute('date') || 'Unknown Date';

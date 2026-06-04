@@ -1,9 +1,25 @@
+<style>
+    .guid-text {
+        color: #5d6b6e;
+        font-weight: 600;
+    }
+
+    .name-text {
+        font-size: 14px;
+        color: #5d6b6e;
+        font-weight: 100;
+    }
+</style>
+
 <layout-box class="genric-card" style="width: 960px">
-    <layout-row align-self="CenterStart"></layout-row>
+    <layout-row align-self="CenterStart">
+        <horizontal-spacer size="24px"></horizontal-spacer>
+<!--        <p class="name-text">Mai Onsyn</p>-->
+    </layout-row>
     <layout-row align-self="Center" padding="4px" gap="6px">
-        <generic-button width="72px" height="36px" color="#000000">首页</generic-button>
-        <generic-button width="72px" height="36px" color="#000000">作品集</generic-button>
-        <generic-button width="72px" height="36px" color="#000000">博客</generic-button>
-        <generic-button width="72px" height="36px" color="#000000">留言板</generic-button>
+        <generic-button width="72px" height="36px" class="guid-text" href="../html/home.html">首页</generic-button>
+        <generic-button width="72px" height="36px" class="guid-text">作品集</generic-button>
+        <generic-button width="72px" height="36px" class="guid-text">博客</generic-button>
+        <generic-button width="72px" height="36px" class="guid-text">留言板</generic-button>
     </layout-row>
 </layout-box>

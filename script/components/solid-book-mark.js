@@ -1,4 +1,4 @@
-class OrdinalLabel extends HTMLElement {
+class SolidBookMark extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -90,4 +90,4 @@ class OrdinalLabel extends HTMLElement {
     }
 }
 
-customElements.define('ordinal-label', OrdinalLabel);
+customElements.define('solid-book-mark', SolidBookMark);

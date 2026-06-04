@@ -26,3 +26,9 @@
     /*line-height: 12px;*/
     font-weight: bold;
 }
+
+.body-text {
+    font-size: 14px;
+    line-height: 24px;
+    color: #262626;
+}

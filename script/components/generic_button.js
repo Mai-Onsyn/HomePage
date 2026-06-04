@@ -8,8 +8,9 @@ class GlassButton extends HTMLElement {
         const width = this.getAttribute('width') || '100%';
         const height = this.getAttribute('height') || '100%';
         const border_radius = this.getAttribute('border-radius') || '6px';
-        const color = this.getAttribute('color') || '#000000';
         const align = this.getAttribute('content-align') || 'Center';
+        const href = this.getAttribute('href') || '#';
+        const hrefNewPage = this.getAttribute('new-page') === 'true' || false;
 
         if (this.hasAttribute('padding')) {
             this.style.padding = this.getAttribute('padding');
@@ -17,30 +18,6 @@ class GlassButton extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
             <style>
-                /*:host {
-                    display: inline-block;
-                }
-                button {
-                    position: relative;
-                    overflow: hidden;
-                    font-size: 12pt;
-                    font-weight: 500;
-                    width: ${width};
-                    height: ${height};
-                    color: ${color};
-                    background-color: rgb(255 255 255 / 0);
-                    border: none;
-                    border-radius: ${border_radius};
-                    cursor: pointer;
-                    outline: none;
-                    user-select: none;
-                    transition: background-color 0.4s;
-
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }*/
-
                 ::slotted(object), ::slotted(img), ::slotted(svg) {
                     display: block;
                     pointer-events: none;
@@ -66,8 +43,11 @@ class GlassButton extends HTMLElement {
             <layout-box class="button-container" alignment="${align}">
                 <slot></slot>
             </layout-box>
-<!--            <button><slot></slot></button>-->
         `;
+
+        this.addEventListener('click', () => {
+            window.open(href, hrefNewPage ? '_blank' : '_self')
+        });
     }
 }
 customElements.define('generic-button', GlassButton);
