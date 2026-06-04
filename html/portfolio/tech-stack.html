@@ -1,18 +1,28 @@
 <style>
     .tech-grid-box {
         display: flex;
-        flex-wrap: wrap;           /* 关键 1：允许内容放不下时自动换行 */
-        justify-content: flex-start; /* 关键 2：从左到右依次排列 */
-        align-items: stretch;      /* 关键 3：让同一行的元素高度自动对齐（哪怕内容长短不一） */
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: stretch;
 
-        gap: 16px;                 /* 控制网格之间的横向、纵向间距 */
+        gap: 16px;
         padding: 16px;
         width: 100%;
         box-sizing: border-box;
     }
+
+    .lang-concentration {
+
+    }
+
+    .lang-concentration progress-bar {
+        width: 100%;
+        height: 12px;
+    }
 </style>
 
 <layout-box style="width: 960px; height: 200px;">
+    <solid-book-mark text="02" style="transform: translate(-50px, 0)"></solid-book-mark>
     <layout-row gap="16px">
         <layout-column class="genric-card" style="width: 50%; height: 100%" padding="16px" gap="16px">
             <span class="section-title">TECH STACK</span>
@@ -34,7 +44,7 @@
                     name="C++23">
                 </tech-stack-item>
                 <tech-stack-item
-                    icon="../assets/icon/github.svg"
+                    icon="../assets/icon/java.svg"
                     name="JavaFX">
                 </tech-stack-item>
                 <tech-stack-item
@@ -47,9 +57,18 @@
                 </tech-stack-item>
             </div>
         </layout-column>
-        <layout-column class="genric-card" style="width: 50%; height: 100%">
+        <layout-column class="genric-card" style="width: 50%; height: 100%" padding="16px" gap="16px">
+            <span class="section-title">LANGUAGES</span>
 
+            <layout-column id="lang-column" class="fill-max-size" gap="12px">
+<!--                <layout-row class="lang-concentration" vertical-alignment="Center" gap="16px">-->
+<!--                    <span class="body-text">Java</span>-->
+<!--                    <progress-bar percent="40%"></progress-bar>-->
+<!--                    <span class="body-text">xx%</span>-->
+<!--                </layout-row>-->
+            </layout-column>
         </layout-column>
     </layout-row>
-    <solid-book-mark text="02" style="transform: translate(-50px, 0)"></solid-book-mark>
 </layout-box>
+
+<script src="../../script/github_languages.js"></script>

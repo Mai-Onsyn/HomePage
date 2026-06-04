@@ -14,7 +14,7 @@
 
     async function loadHeatmap() {
         try {
-            // const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
+            const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
             const data = await response.json();
 
             // --- 核心优化逻辑：补齐第一周 ---

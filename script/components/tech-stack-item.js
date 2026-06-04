@@ -10,6 +10,7 @@ class TechStackItem extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="../../css/base.css">
+        <link rel="stylesheet" href="../../css/generic-card.css">
         <style>
             .tech-item-container {
                 border-radius: 4px;
@@ -24,7 +25,7 @@ class TechStackItem extends HTMLElement {
                 font-weight: bold;
             }
         </style>
-        <div class="tech-item-container genric-card">
+        <div class="tech-item-container">
             <layout-row vertical-alignment="Center" gap="8px">
                 <object data="${iconUrl}" type="image/svg+xml" width="20" height="20"></object>
                 <span class="tech-item-text">${name}</span>

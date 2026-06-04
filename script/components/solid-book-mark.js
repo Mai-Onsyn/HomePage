@@ -15,7 +15,7 @@ class SolidBookMark extends HTMLElement {
                 position: relative;
                 box-sizing: border-box;
                 z-index: 0;
-                
+                pointer-events: none;
                 --bg-transform: ${flip ? 'scaleX(-1)' : 'none'};
             }
         
