@@ -9,17 +9,48 @@
         color: #5d6b6e;
         font-weight: 100;
     }
+
+    .guid-bar {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 48px;
+        z-index: 1000;
+        width: 960px;
+
+        transition: background-color 0.4s, width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .guid-bar.active {
+        width: 110%;
+        background-color: #ffffffc0;
+    }
 </style>
 
-<layout-box class="genric-card" style="width: 960px">
+<layout-box class="genric-card guid-bar">
     <layout-row align-self="CenterStart">
         <horizontal-spacer size="24px"></horizontal-spacer>
-<!--        <p class="name-text">Mai Onsyn</p>-->
+        <p class="name-text">Welcome</p>
     </layout-row>
     <layout-row align-self="Center" padding="4px" gap="6px">
-        <generic-button width="72px" height="36px" class="guid-text" href="../html/home.html">首页</generic-button>
-        <generic-button width="72px" height="36px" class="guid-text">作品集</generic-button>
-        <generic-button width="72px" height="36px" class="guid-text">博客</generic-button>
+        <generic-button width="72px" height="36px" class="guid-text" href="./home.html">首页</generic-button>
+        <generic-button width="72px" height="36px" class="guid-text" href="./portfolio.html">作品集</generic-button>
+        <generic-button width="72px" height="36px" class="guid-text" href="./blogs.html">博客</generic-button>
         <generic-button width="72px" height="36px" class="guid-text">留言板</generic-button>
     </layout-row>
 </layout-box>
+
+<script>
+    const navContainer = document.querySelector('.guid-bar')
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (scrollTop === 0) {
+            navContainer.classList.remove('active');
+        } else {
+            navContainer.classList.add('active')
+        }
+        console.log(`当前纵向滚动了: ${scrollTop} px`);
+    });
+</script>

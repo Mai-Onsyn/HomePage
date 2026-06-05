@@ -15,14 +15,35 @@ async function loadLanguages() {
         const totalLanguages = {};
         let totalBytes = 0;
         for (const repo of repos) {
-            const response = await fetch(`https://api.github.com/repos/Mai-Onsyn/${repo}/languages`);
-            const data = await response.json();
+            try {
+                const response = await fetch(`https://api.github.com/repos/Mai-Onsyn/${repo}/languages`);
+                if (!response.ok) {
+                    totalBytes = 0;
+                    break;
+                }
+                const data = await response.json();
 
-            for (const [language, bytes] of Object.entries(data)) {
-                if (language === 'C') continue;
-                totalLanguages[language] = (totalLanguages[language] || 0) + bytes;
-                totalBytes += bytes;
+                for (const [language, bytes] of Object.entries(data)) {
+                    if (language === 'C') continue;
+                    if (language === 'Objective-C') continue;
+                    if (language === 'Python') continue;
+                    if (language === 'CMake') continue;
+                    totalLanguages[language] = (totalLanguages[language] || 0) + bytes;
+                    totalBytes += bytes;
+                }
+            } catch (t) {
+                console.error(t);
+                totalBytes = 0;
+                break;
             }
+        }
+        if (totalBytes === 0) {
+            document.getElementById("lang-column").insertAdjacentHTML('beforeend', `
+                <layout-box alignment="Center">
+                    <span style="color: red; font-weight: bold">请求Github失败</span>
+                </layout-box>
+            `);
+            return;
         }
 
         const langColors = await loadPLangColorJson('../assets/lang_colors.json');

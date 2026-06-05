@@ -17,8 +17,8 @@ class ArticleCard extends HTMLElement {
             <style>
                 .card-image-wrapper {
                 aspect-ratio: 3/4; 
-    width: 72px;
-    flex-shrink: 0;
+                width: 72px;
+                flex-shrink: 0;
                     overflow: hidden;
                     border-radius: 6px;
                     border: 1px solid white;
@@ -26,9 +26,9 @@ class ArticleCard extends HTMLElement {
                 }
                 .card-image {
                     width: 100%;
-    height: 100%;
+                    height: 100%;
                     object-fit: cover; 
-    object-position: center;
+                    object-position: center;
                     display: block;
                 }
             </style>

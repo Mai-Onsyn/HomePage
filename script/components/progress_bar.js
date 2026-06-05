@@ -24,13 +24,13 @@ class ProgressBar extends HTMLElement {
                 .thumb {
                     display: block;
                     height: 100%;
-                    width: ${percent};       
+                    width: ${percent};
                     
                     background: ${color};
                     border-radius: 100000px;
                     transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
                     
-                    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+                    box-shadow: 0 0 8px color-mix(in srgb, transparent, ${color});
                 }
             </style>
             <div class="track">

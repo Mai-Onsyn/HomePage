@@ -1,6 +1,182 @@
-<layout-box class="genric-card" style="width: 960px; height: 800px;">
-    <solid-book-mark text="03" style="transform: translate(-50px, 0)"></solid-book-mark>
-    <layout-row>
+<style>
+    .slid-wrapper {
+        width: max-content;
+        height: max-content;
+        transform: translate(-60px, -30px);
+        opacity: 0;
+        transition:
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
-    </layout-row>
+    .slid-wrapper.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .slid-wrapper-flipped {
+        width: max-content;
+        height: max-content;
+        transform: translate(60px, 30px);
+        opacity: 0;
+        transition:
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .slid-wrapper-flipped.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .slid-wrapper-flipped span {
+        text-align: right;
+        display: block;
+    }
+
+    .work-cover-image {
+        height: 120px;
+        width: auto;
+        border-radius: 6px;
+        border: 1px solid white;
+        box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .work-cover-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .work-card {
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    /*.span-flip {*/
+    /*}*/
+</style>
+
+<layout-box class="genric-card" style="width: 960px; height: auto">
+    <solid-book-mark text="03" style="transform: translate(-50px, 0)"></solid-book-mark>
+    <layout-column gap="16px" padding="16px" class="fill-max-size">
+        <span align-self="Center" class="section-title" style="font-size: 28px; line-height: 32px">精选项目</span>
+
+        <layout-column class="fill-max-size" gap="24px">
+            <div class="slid-wrapper">
+                <breathe-card>
+                    <layout-row class="work-card" padding="24px" gap="16px">
+                        <div class="work-cover-image">
+                            <img src="../../assets/images/works/dobot.png" alt="dobot">
+                        </div>
+
+                        <layout-column gap="8px">
+                            <span class="section-title">Dobot</span>
+                            <span class="body-text" style="font-size: 13px; line-height: 20px">
+                                沙石含泥量检测系统控制软件<br>封装了越疆机械臂、Arduino串口水泵、STM32串口升降台、海康摄像头等硬件的Kotlin API<br>
+                                拥有完整的控制台命令控制程序，以及正在开发的Compose Desktop图形化GUI
+                            </span>
+                            <layout-row gap="8px">
+                                <text-label text="Kotlin"></text-label>
+                                <text-label text="Compose MultiPlatform"></text-label>
+                            </layout-row>
+                        </layout-column>
+                    </layout-row>
+                </breathe-card>
+            </div>
+            <div class="slid-wrapper-flipped" align-self="End">
+                <breathe-card>
+                    <layout-row class="work-card" padding="24px" gap="16px">
+                        <layout-column gap="8px">
+                            <span class="section-title" align-self="End">VeloVoice</span>
+                            <span class="body-text" style="font-size: 13px; line-height: 20px">
+                                完全由Java/JavaFX开发的文本转小说软件，专为解决长文本转换慢、难管理的问题<br>
+                                自带文本文件编辑工具，一个导航栏即可管理多部小说，一键加载网络/本地epub/txt文件并自动结构化解析<br>
+                                多线程TTS服务处理转换，效率高，支持Edge/SAPI5/Multi/GPT-SoVITS引擎，且易于拓展
+                            </span>
+                            <layout-row gap="8px" align-self="End">
+                                <text-label text="Java"></text-label>
+                                <text-label text="JavaFX"></text-label>
+                            </layout-row>
+                        </layout-column>
+                        <div class="work-cover-image">
+                            <img src="https://i0.hdslb.com/bfs/new_dyn/54c721ab080a598cc948e5ea087d4e4d544189344.png" alt="velovoice">
+                        </div>
+
+                    </layout-row>
+                </breathe-card>
+            </div>
+            <div class="slid-wrapper">
+                <breathe-card>
+                    <layout-row class="work-card" padding="24px" gap="16px">
+                        <div class="work-cover-image">
+                            <img src="../../assets/images/works/renderer-dirt.png" alt="Dirt Block">
+                        </div>
+
+                        <layout-column gap="8px">
+                            <span class="section-title">软光栅3D渲染器</span>
+                            <span class="body-text" style="font-size: 13px; line-height: 20px">
+                                纯CPU计算模型变换、视口变换、透视投影、光照模拟、深度测试以及光栅化像素<br>
+                                采用OpenGL提交并显示CPU帧缓冲，CPU端三缓冲交换实现，渲染、应用线程分离<br>
+                                C++23模块化代码，项目源代码不包含任何头文件，并且使用智能指针管理缓冲区
+                            </span>
+                            <layout-row gap="8px">
+                                <text-label text="C++"></text-label>
+                            </layout-row>
+                        </layout-column>
+                    </layout-row>
+                </breathe-card>
+            </div>
+            <div class="slid-wrapper-flipped" align-self="End">
+                <breathe-card>
+                    <layout-row class="work-card" padding="24px" gap="16px">
+                        <layout-column gap="8px">
+                            <span class="section-title" align-self="End">MineClannad</span>
+                            <span class="body-text" style="font-size: 13px; line-height: 20px">
+                                完全由Minecraft命令系统复刻开发的Game In Game视觉小说<br>
+                                没有编程语言，游戏内命令即是编程语言，拥有基础主界面，音乐，以及视觉小说必备的多选项路线<br>
+                                使用像素画显示图片，TextDisplay实体显示文字，资源包加载声音，记分板、交互实体处理用户输入
+                            </span>
+                            <layout-row gap="8px" align-self="End">
+                                <text-label text="Minecraft"></text-label>
+                                <text-label text="MC-Function"></text-label>
+                            </layout-row>
+                        </layout-column>
+                        <div class="work-cover-image">
+                            <img src="https://i2.hdslb.com/bfs/archive/d73966baaa8c65f4dc7863c53c8d76731a6d0576.jpg@672w_378h_1c.avif" alt="velovoice">
+                        </div>
+
+                    </layout-row>
+                </breathe-card>
+            </div>
+        </layout-column>
+    </layout-column>
 </layout-box>
+
+<script>
+    function initScrollAnimation() {
+        const observerOptions = {
+            root: null,
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const targets = document.querySelectorAll('.slid-wrapper');
+        const targetsFlipped = document.querySelectorAll('.slid-wrapper-flipped');
+        targets.forEach(target => observer.observe(target));
+        targetsFlipped.forEach(target => observer.observe(target));
+    }
+
+    setTimeout(() => {
+        initScrollAnimation();
+    }, 1500);
+</script>

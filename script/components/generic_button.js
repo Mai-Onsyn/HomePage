@@ -38,16 +38,23 @@ class GlassButton extends HTMLElement {
                 .button-container:active {
                     background-color: rgb(128 128 128 / 0.7);
                 }
+                
+                .link-a {
+                    color: inherit;
+                    text-decoration: none;
+                }
             </style>
             <link rel="stylesheet" href="../../css/base.css">
-            <layout-box class="button-container" alignment="${align}">
-                <slot></slot>
-            </layout-box>
+            <a href="${href}" class="link-a">
+                <layout-box class="button-container" alignment="${align}">
+                    <slot></slot>
+                </layout-box>
+            </a>
         `;
-
-        this.addEventListener('click', () => {
-            window.open(href, hrefNewPage ? '_blank' : '_self')
-        });
+        //
+        // this.addEventListener('click', () => {
+        //     window.open(href, hrefNewPage ? '_blank' : '_self')
+        // });
     }
 }
 customElements.define('generic-button', GlassButton);

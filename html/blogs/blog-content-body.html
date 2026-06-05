@@ -1,0 +1,23 @@
+<style>
+    .blog-content-body {
+        width: 720px;
+        height: auto;
+        display: inline-block;
+
+        transform: translate(120px);
+    }
+</style>
+
+<layout-column class="blog-content-body" gap="16px">
+    <link-html src="./blogs/hero.html"></link-html>
+
+    <layout-column class="genric-card" gap="16px" padding="8px" style="width: 100%; height: auto; background-color: transparent">
+        <blog-item
+                image="https://i2.hdslb.com/bfs/article/b5d2b03e5aa6d01a4ccd627c16dcc9d8544189344.jpg@426w_320h_1c.avif"
+                title="Test blog"
+                desc="a text to test style"
+                tags="A; B; Java"
+                date="2026-6-5">
+        </blog-item>
+    </layout-column>
+</layout-column>
