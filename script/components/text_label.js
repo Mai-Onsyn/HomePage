@@ -11,7 +11,9 @@ class TextLabel extends HTMLElement {
             <style>
                 .label-container {
                     display: inline-block;
-                    padding: 4px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    padding-bottom: 4px;
                     border-radius: 8px;
                     background-color: #3b6ef320;
                 }
@@ -19,6 +21,7 @@ class TextLabel extends HTMLElement {
                 .label-text {
                     font-size: 12px;
                     color: #3b6ef3;
+                    line-height: 12px;
                 }
             </style>
             <div class="label-container">

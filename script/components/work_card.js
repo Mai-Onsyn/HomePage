@@ -25,6 +25,8 @@ class WorkCard extends HTMLElement {
                     width: 100%;
                     aspect-ratio: 16/9;
                     display: block;
+                    object-fit: cover;
+                    object-position: center;
                 }
             </style>
             <generic-button width="240px" height="100%" content-align="TopCenter">

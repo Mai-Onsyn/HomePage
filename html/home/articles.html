@@ -31,7 +31,7 @@
                             date="2023-07-21">
                     </article-card>
 
-                    <layout-box class="query-more-button" align-self="Center" alignment="Center" border-radius="6px">
+                    <layout-box id="query-more-article-btn" class="query-more-button" align-self="Center" alignment="Center" border-radius="6px">
                         <layout-column horizontal-alignment="Center" gap="12px">
                             <object data="../../assets/icon/right_arrow.svg" type="image/svg+xml" width="28" height="28"></object>
                             <p class="prompt-text">查看更多</p>
@@ -43,3 +43,9 @@
     </layout-box>
     <solid-book-mark text="04" flip="true"></solid-book-mark>
 </layout-row>
+
+<script>
+    document.getElementById("query-more-article-btn").addEventListener('click', () => {
+        window.open("../html/blogs.html", "_blank");
+    });
+</script>

@@ -6,8 +6,16 @@
         position: fixed;
         left: 50%;
         top: 64px;
-        transform: translate(-50%) translate(-380px);
+        opacity: 0;
+        transform: translate(-50%) translate(-450px);
         z-index: 1000;
+
+        transition: 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .left-fixed-container.show {
+        opacity: 1;
+        transform: translate(-50%) translate(-380px);
     }
 
     .label-grid-box {
@@ -72,3 +80,5 @@
         <text-label text="Kotlin"></text-label>
     </div>
 </layout-column>
+
+<script>slideInAnimation(".left-fixed-container")</script>

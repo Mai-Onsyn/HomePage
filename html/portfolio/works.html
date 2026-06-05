@@ -143,7 +143,7 @@
                             </layout-row>
                         </layout-column>
                         <div class="work-cover-image">
-                            <img src="https://i2.hdslb.com/bfs/archive/d73966baaa8c65f4dc7863c53c8d76731a6d0576.jpg@672w_378h_1c.avif" alt="velovoice">
+                            <img src="https://i2.hdslb.com/bfs/archive/d73966baaa8c65f4dc7863c53c8d76731a6d0576.jpg@672w_378h_1c.avif" alt="mine clannad">
                         </div>
 
                     </layout-row>
@@ -154,29 +154,6 @@
 </layout-box>
 
 <script>
-    function initScrollAnimation() {
-        const observerOptions = {
-            root: null,
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        const targets = document.querySelectorAll('.slid-wrapper');
-        const targetsFlipped = document.querySelectorAll('.slid-wrapper-flipped');
-        targets.forEach(target => observer.observe(target));
-        targetsFlipped.forEach(target => observer.observe(target));
-    }
-
-    setTimeout(() => {
-        initScrollAnimation();
-    }, 1500);
+    slideInAnimation(".slid-wrapper");
+    slideInAnimation(".slid-wrapper-flipped");
 </script>

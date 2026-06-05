@@ -6,18 +6,67 @@
 
         transform: translate(120px);
     }
+
+    .blog-item-card {
+        cursor: pointer;
+        opacity: 0;
+        transform: translate(0, 60px);
+
+        transition:
+                transform 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .blog-item-card.show {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .blog-item-card.ready {
+        transition:
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .blog-item-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .blog-item-card:active {
+        transform: scale(1.01);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    }
 </style>
 
 <layout-column class="blog-content-body" gap="16px">
     <link-html src="./blogs/hero.html"></link-html>
 
-    <layout-column class="genric-card" gap="16px" padding="8px" style="width: 100%; height: auto; background-color: transparent">
-        <blog-item
-                image="https://i2.hdslb.com/bfs/article/b5d2b03e5aa6d01a4ccd627c16dcc9d8544189344.jpg@426w_320h_1c.avif"
+    <layout-column class="genric-card blog-column" gap="8px" padding="8px" style="width: 100%; height: auto; background-color: transparent">
+        <blog-item class="blog-item-card"
+                image="../assets/images/head-image.jpg"
                 title="Test blog"
-                desc="a text to test style"
-                tags="A; B; Java"
+                desc="测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本 test stylea text to test style"
+                tags="TagA; TagB; Java"
+                date="2026-6-5">
+        </blog-item>
+        <blog-item class="blog-item-card"
+                image="../assets/images/head-image.jpg"
+                title="Test blog"
+                desc="测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本 test stylea text to test style"
+                tags="TagA; TagB; Java"
+                date="2026-6-5">
+        </blog-item>
+        <blog-item class="blog-item-card"
+                image="../assets/images/head-image.jpg"
+                title="Test blog"
+                desc="测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本 test stylea text to test style"
+                tags="TagA; TagB; Java"
                 date="2026-6-5">
         </blog-item>
     </layout-column>
 </layout-column>
+
+<script>slideInAnimation('.blog-item-card')</script>
