@@ -4,15 +4,15 @@
 
 根据我几个晚自习手画三维坐标系、手写代码和手算验证  下面是我得出的空间Soma3.0曲线绘制方法
 
-![图片](//i0.hdslb.com/bfs/article/70163eaa5468fa14fc084212ea85c593544189344.png@1256w_696h_!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/soma3-curve/soma-body1.avif)
 
 # 读前提醒
 
 1.关于平面Soma3.0曲线的绘制 建议先去看@[Csrua](https://space.bilibili.com/361846321)大佬或@[SnowyKami](https://space.bilibili.com/233938750)大佬的专栏 以更好地理解Soma3.0曲线：
 
-![卡片](//i0.hdslb.com/bfs/new_dyn/card/bdaf1ce5946e1fd841d6d3411c26e71a544189344.png)
+[【几何】Soma3.0平滑曲线](https://www.bilibili.com/read/cv14086991?from=articleDetail)
 
-![卡片](//i0.hdslb.com/bfs/new_dyn/card/cc61ce410591e59feb693cd8c25d1c11544189344.png)
+[Soma3.0粒子特效教程-基岩版](https://www.bilibili.com/read/cv7168364?from=articleDetail)
 
 2.本人数学不及格 本篇中部分数学方法是自学的 若有表达错误是正常的 还求勿喷
 
@@ -20,7 +20,7 @@
 
 4.本篇的内容并不深奥 绘图是小学美术课教的 空间坐标系是高中数学课教的 只要你学过解析几何 再琢磨几下就一定能看懂 不然只能说你没认真看
 
-![图片](//i0.hdslb.com/bfs/article/02db465212d3c374a43c60fa2625cc1caeaab796.png@progressive.webp)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/bili-divider-1.webp)
 
 # 准备工作
 
@@ -62,7 +62,7 @@
 
 空间Soma3.0曲线是平面Soma3.0曲线的延伸 要想知道空间Soma3.0曲线如何绘制 首先要搞懂平面Soma3.0曲线是怎么绘制的
 
-![图片](//i0.hdslb.com/bfs/article/053655428d39476d0674749a355b1d08544189344.png@1256w_1438h_!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/soma3-curve/soma-body2.avif)
 
 要用圆弧连接A、B、C三点 首先作AB于BC的中垂线 在AB中垂线上取一点D作为初始圆心 以D为圆心作圆弧连接A、B两点 然后作直线DB 交BC中垂线为点E 以E为圆心作圆弧BC
 
@@ -80,7 +80,7 @@
 
 但若要绘制圆弧 通过圆上两个点是不能唯一确定一条圆弧的 因此需要借助速度向量
 
-![GIF](//i0.hdslb.com/bfs/article/23b1b7eb6f85f74bf3df2583aa995668544189344.gif@1256w_956h_!web-article-pic.avif)
+![GIF](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/soma3-curve/soma-body3.webp)
 
 https://www.geogebra.org/m/rtsq239v
 
@@ -90,7 +90,7 @@ https://www.geogebra.org/m/rtsq239v
 
 将轴向量正对着自己 也就是从轴向量垂直向外的方向看去 并将速度向量的起点移到圆心 进行观察
 
-![GIF](//i0.hdslb.com/bfs/article/fcb20cfe78d402072ed27d4012abcb52544189344.gif@1256w_1094h_!web-article-pic.avif)
+![GIF](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/soma3-curve/soma-body4.webp)
 
 https://www.geogebra.org/m/wptfswza
 
@@ -106,13 +106,13 @@ https://www.geogebra.org/m/wptfswza
 
 由平面Soma3.0曲线的绘制过程可知 绘制连接两点的圆弧需要绘制中垂线 原理是两点中垂线上的点 到两端点的距离相等 也就可以确定半径绘制圆弧 而这个方法推广到空间坐标系中也同样适用 只不过是把中垂线换成了中垂面 因为在空间中 两点的中垂面上的点到两端点的距离相等
 
-![GIF](//i0.hdslb.com/bfs/article/653fe6d2591027ce44d13c2bd349e27e544189344.gif@1256w_824h_!web-article-pic.avif)
+![GIF](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/soma3-curve/soma-body5.webp)
 
 https://www.geogebra.org/m/xzxpftbx
 
 根据上述空间圆弧的绘制 可知绘制一段圆弧需要圆心 始末点和起始点速度向量的方向 但若是不知道圆心 也是可以通过速度向量计算出来的 下面是具体计算方法
 
-![GIF](//i0.hdslb.com/bfs/article/7ccdbb555d0a39ac9fb8ff82797ea726544189344.gif@1256w_830h_!web-article-pic.avif)
+![GIF](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/soma3-curve/soma-body6.webp)
 
 https://www.geogebra.org/m/hpnzsm4c
 
@@ -136,11 +136,11 @@ Soma3.0曲线是平滑曲线 那么两条直线之间的连接也是平滑的 �
 
 Soma3.0曲线由于速度方向的原因 不能出现多点汇聚于一点的情况 对于需要多分支的连接 建议去看我这篇博客：
 
-![卡片](//i0.hdslb.com/bfs/new_dyn/card/2a9a7b507907d3c9c8a1314251d252d4544189344.png)
+[【MCx几何】空间多点连接的视觉复杂度优化问题](https://www.bilibili.com/read/cv33935654?from=articleDetail)
 
 这篇大致讲了空间中多点对多点连接的问题 可以用在本篇的Soma3.0曲线的绘制 当然 如果你只需要一条线到底 就不用考虑这些
 
-![图片](//i0.hdslb.com/bfs/article/02db465212d3c374a43c60fa2625cc1caeaab796.png@progressive.webp)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/bili-divider-1.webp)
 
 # 代码思路
 
@@ -392,9 +392,9 @@ class ConnectList {
 
 # 测试
 
-![图片](//i0.hdslb.com/bfs/article/8e9a31ecf5c571188e3307a32032b7f5544189344.png@1256w_1088h_!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/soma3-curve/soma-body7.avif)
 
-![图片](//i0.hdslb.com/bfs/article/98cceb4c7e8f94327f46a968ed6c1b5e544189344.png@1256w_498h_!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/soma3-curve/soma-body8.avif)
 
 # ~~结尾废话~~
 

@@ -6,11 +6,11 @@
 
 支持自定义Sec-MS-GEC api服务器 只要该api返回的是JSON数据且包含"Sec-MS-GEC"和"Sec-MS-GEC-Version"这两个key即可
 
-![图片](//i0.hdslb.com/bfs/article/e4e579d581ca1a75fbcb7d441c44e3a8544189344.png@!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/velovoice-sec-server/vss1.avif)
 
 VeloVoice中的配置项
 
-![图片](//i0.hdslb.com/bfs/article/1f3568dcd9621579b7029c162a9bee1f544189344.png@!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/velovoice-sec-server/vss2.avif)
 
 浏览器访问配置的地址的结果
 
@@ -28,7 +28,7 @@ VeloVoice中的配置项
 
 浏览器直接搜python下载之后安装就可以了 没什么难度 安装完之后按win+r输入cmd回车 打开cmd之后输入pip 出现类似下面这堆乱七八糟的就算是安装成功了
 
-![图片](//i0.hdslb.com/bfs/article/1d89d3621efb0bada2ec5409977f8557544189344.png@1256w_942h_!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/velovoice-sec-server/vss3.avif)
 
 **2.安装mitmproxy**
 
@@ -48,13 +48,13 @@ mitmdump
 
 然后在C:\Users\YOUR_NAME\.mitmproxy中找到mitmproxy-ca.p12 像这样安装证书：
 
-![图片](//i0.hdslb.com/bfs/article/4c1c1e44022396205eaef2cc9aa3fc3d544189344.gif@1256w_668h_!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/velovoice-sec-server/vss4.webp)
 
 **3.配置代理**
 
 在设置-网络和Internet-代理中手动设置代理
 
-![图片](//i0.hdslb.com/bfs/article/ed1a253b6a4b5598033b4ec1c0d7b16b544189344.png@1256w_744h_!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/velovoice-sec-server/vss5.avif)
 
 端口是api服务器的config.json中的"MITMProxyPort"的值
 
@@ -64,7 +64,7 @@ mitmdump
 
 如果无法运行 说明你的电脑里没有java或是java版本低于22 可以从[https://www.oracle.com/java/technologies/downloads/上下载jdk22或以上版本的java](https://www.oracle.com/java/technologies/downloads/) 解压之后和服务器的.jar文件放在一个文件夹下 就像这样：
 
-![图片](//i0.hdslb.com/bfs/article/c028eb3ebf7c343bbdb2248e41501a78544189344.png@1256w_474h_!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/velovoice-sec-server/vss6.avif)
 
 然后用记事本打开start.bat 把里面的内容换成
 

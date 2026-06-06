@@ -4,7 +4,7 @@ class BlogItemCard extends HTMLElement {
     }
 
     connectedCallback() {
-        const imgUrl = this.getAttribute('image') || '#';
+        const imgUrl = this.getAttribute('image') || '../../assets/images/cover.jpg';
         const title = this.getAttribute('title') || 'No Titled';
         const desc = this.getAttribute('desc') || 'No Description';
         const tagStr = this.getAttribute('tags') || '';

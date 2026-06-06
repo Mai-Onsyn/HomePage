@@ -8,11 +8,11 @@
 
 空间中一点P 可以用三个基底向量表示 即![P%3Da%5Cvec%20e_1%2Bb%5Cvec%20e_2%2Bc%5Cvec%20e_3](//api.bilibili.com/x/web-frontend/mathjax/tex?formula=P%3Da%5Cvec%20e_1%2Bb%5Cvec%20e_2%2Bc%5Cvec%20e_3) 其中 (a, b, c)即为P在e1, e2和e3所构成的坐标系中的坐标
 
-![图片](//i0.hdslb.com/bfs/article/455025d36c9bce8502b393ffadb95fe3544189344.png@!web-article-pic.avif)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/coordinate-trans/ct1.webp)
 
 本篇专栏的目的即为通过已知P在直角坐标系中的坐标 求出P点在另外两个向量或三个向量所构成的坐标系中的坐标
 
-![图片](//i0.hdslb.com/bfs/article/02db465212d3c374a43c60fa2625cc1caeaab796.png@progressive.webp)
+![图片](http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/blog/bili-divider-1.webp)
 
 # 平面坐标系变换
 

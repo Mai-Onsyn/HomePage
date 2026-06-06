@@ -5,10 +5,14 @@ class ArticleCard extends HTMLElement {
     }
 
     connectedCallback() {
-        const imgSrc = this.getAttribute('image') || 'https://i2.hdslb.com/bfs/article/96d2b3d2a72e6497a011c885ab9245c51507ce18.png@470w_628h_1c.avif';
+        const imgSrc = this.getAttribute('image') || '../../assets/images/cover.jpg';
         const titleText = this.getAttribute('title') || 'No Titled';
         const descText = this.getAttribute('desc') || 'No Information';
         const dateText = this.getAttribute('date') || 'Unknown Date';
+        const article = this.getAttribute('article') || '#';
+        this.addEventListener('click', () => {
+            window.open(`./markdown.html?path=${article}`, '_blank');
+        });
 
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../../css/text-style.css">

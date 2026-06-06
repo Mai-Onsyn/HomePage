@@ -13,6 +13,21 @@
     <script src="../script/components/work-card.js"></script>
     <script src="../script/components/article-card.js"></script>
     <script src="../script/components/html-linker.js"></script>
+    <script src="../script/slide-in-animation.js"></script>
+
+    <style>
+        .home-card-animation {
+            transform: translate(0, 40px);
+            opacity: 0;
+
+            transition: all 1.2s cubic-bezier(0.25,1,0.5,1);
+        }
+
+        .home-card-animation.show {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    </style>
 </head>
 <body>
     <link-html src="./universal/guid.html"></link-html>
@@ -20,13 +35,17 @@
         <layout-column horizontal-alignment="Center">
             <layout-column gap="16px">
                 <vertical-spacer size="48px"></vertical-spacer>
-                <link-html src="./home/hero.html"></link-html>
-                <link-html src="./home/nav-block.html"></link-html>
-                <link-html src="./home/recent-work.html"></link-html>
-                <link-html src="./home/articles.html"></link-html>
+                <link-html src="./home/hero.html" class="home-card-animation"></link-html>
+                <link-html src="./home/nav-block.html" class="home-card-animation"></link-html>
+                <link-html src="./home/recent-work.html" class="home-card-animation"></link-html>
+                <link-html src="./home/articles.html" class="home-card-animation"></link-html>
             </layout-column>
             <link-html src="./universal/copyright.html"></link-html>
         </layout-column>
     </layout-box>
+
+<script>
+    slideInAnimation('.home-card-animation');
+</script>
 </body>
 </html>
