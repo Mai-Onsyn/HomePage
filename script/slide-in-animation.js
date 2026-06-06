@@ -1,5 +1,5 @@
 function slideInAnimation(className) {
-    console.log(className);
+    // console.log(className);
 
     let animationQueue = [];
     let isProcessingQueue = false;

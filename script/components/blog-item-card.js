@@ -9,12 +9,17 @@ class BlogItemCard extends HTMLElement {
         const desc = this.getAttribute('desc') || 'No Description';
         const tagStr = this.getAttribute('tags') || '';
         const date = this.getAttribute('date') || '1970-01-01';
+        const article = this.getAttribute('article') || '#';
 
         const tagList = tagStr.split(/;\s+/);
         let tagDOM = "";
         tagList.forEach(tag => {
             tagDOM += `<text-label text="${tag}"></text-label>`;
         })
+
+        this.addEventListener('click', () => {
+            window.open(`./markdown.html?path=${article}`, '_blank');
+        });
 
         this.innerHTML = `
             <style>

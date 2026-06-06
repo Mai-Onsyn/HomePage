@@ -67,7 +67,7 @@ async function loadLanguages() {
             // console.log(langColors[language]);
         }
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 }
 

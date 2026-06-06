@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详情</title>
+    <link rel="stylesheet" href="../css/markdown.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/text-style.css">
+    <link rel="stylesheet" href="../css/generic-card.css">
+
+    <script src="../script/components/html-linker.js"></script>
+    <script src="../script/components/layout.js"></script>
+    <script src="../script/components/generic-button.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it-mathjax3/dist/markdown-it-mathjax3.min.js"></script>
+</head>
+<body>
+
+<link-html src="./universal/guid.html"></link-html>
+
+<layout-column align-self="Center" alignment="TopCenter" class="genric-card" style="width: 1060px; background-color: #ffffff00">
+    <layout-column gap="16px">
+        <vertical-spacer size="48px"></vertical-spacer>
+
+        <div class="markdown-wrapper genric-card">
+            <div id="article-body" class="markdown-body">
+                <p style="color: #999;">正在加载文章...</p>
+            </div>
+        </div>
+    </layout-column>
+    <link-html src="./universal/copyright.html"></link-html>
+</layout-column>
+
+<script src="../script/load-markdown.js"></script>
+</body>
+</html>
