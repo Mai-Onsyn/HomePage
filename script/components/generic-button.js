@@ -45,7 +45,7 @@ class GlassButton extends HTMLElement {
                 }
             </style>
             <link rel="stylesheet" href="../../css/base.css">
-            <a href="${href}" class="link-a">
+            <a href="${href}" ${hrefNewPage ? "target=\"_blank\" rel=\"noopener noreferrer\"" : ""} class="link-a">
                 <layout-box class="button-container" alignment="${align}">
                     <slot></slot>
                 </layout-box>

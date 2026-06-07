@@ -8,6 +8,7 @@ class WorkCard extends HTMLElement {
         const imgSrc = this.getAttribute('image') || '';
         const titleText = this.getAttribute('title') || 'No Titled';
         const descText = this.getAttribute('desc') || 'No Information';
+        const link = this.getAttribute('link') || '#';
 
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../../css/text-style.css">
@@ -29,7 +30,7 @@ class WorkCard extends HTMLElement {
                     object-position: center;
                 }
             </style>
-            <generic-button width="240px" height="100%" content-align="TopCenter">
+            <generic-button width="240px" height="100%" content-align="TopCenter" href="${link}" new-page="true">
                 <layout-column vertical-arrangement="SpaceBetween" horizontal-alignment="Start" padding="4px">
                 
                     <layout-box class="card-image-wrapper">
