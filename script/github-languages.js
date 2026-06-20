@@ -18,8 +18,8 @@ async function loadLanguages() {
             try {
                 const response = await fetch(`https://api.github.com/repos/Mai-Onsyn/${repo}/languages`);
                 if (!response.ok) {
-                    totalBytes = 0;
-                    break;
+                    console.error(`Failed to load repository: ${repo}`);
+                    continue;
                 }
                 const data = await response.json();
 

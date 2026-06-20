@@ -12,8 +12,8 @@ horizontal-spacer, vertical-spacer {
 }
 
 html {
-    /*background-image: url('https://t.alcy.cc/pc');*/
-    background-image: url("http://cdn.jsdelivr.net/gh/Mai-Onsyn/ExternalLinkCDN/images/home-site/background.webp");
+    
+    
     background-color: #f0f5fd;
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@ object {
     pointer-events: none;
 }
 
-/* --- Row 的对齐映射 (控制 justify-content 和 align-items) --- */
+
 layout-row[horizontal-arrangement="Start"]        { justify-content: flex-start; }
 layout-row[horizontal-arrangement="Center"]       { justify-content: center; }
 layout-row[horizontal-arrangement="End"]          { justify-content: flex-end; }
@@ -41,7 +41,7 @@ layout-row[vertical-alignment="Center"] { align-items: center; }
 layout-row[vertical-alignment="Bottom"] { align-items: flex-end; }
 
 
-/* --- Column 的对齐映射 --- */
+
 layout-column[vertical-arrangement="Top"]          { justify-content: flex-start; }
 layout-column[vertical-arrangement="Center"]       { justify-content: center; }
 layout-column[vertical-arrangement="Bottom"]       { justify-content: flex-end; }
@@ -53,75 +53,70 @@ layout-column[horizontal-alignment="Center"] { align-items: center; }
 layout-column[horizontal-alignment="End"]    { align-items: flex-end; }
 
 
-/* --- Box 的对齐映射 (九宫格) --- */
+
 layout-box {
     display: grid;
     box-sizing: border-box;
 }
 
-/* 让 Box 内部的所有直接子元素默认叠在第一行第一列 */
+
 layout-box > * {
     grid-area: 1 / 1 / 2 / 2;
 }
 
 [weight="1"] {
     flex: 1 1 0;
-    width: 0; /* 极其关键：防止内部大文本或长图片撑开组件，确保绝对等宽 */
+    width: 0; 
 }
 
 layout-row[scrollable="true"] {
-    overflow-x: auto;       /* 允许横向溢出滚动 */
-    overflow-y: hidden;     /* 禁止垂直方向滚动 */
-    max-width: 100%;        /* 限制最大宽度为父容器宽度 */
-    flex-wrap: nowrap;      /* 强制不换行 */
+    overflow-x: auto;       
+    overflow-y: hidden;     
+    max-width: 100%;        
+    flex-wrap: nowrap;      
 }
 
-/* 极其重要：当 Row 可滚动时，内部所有子元素绝对不能被压缩 */
+
 layout-row[scrollable="true"] > * {
     flex-shrink: 0;
 }
 
-/* 容器本身的基础配置 */
+
 layout-row[scrollable="true"] {
     overflow-x: auto;
     overflow-y: hidden;
     max-width: 100%;
     flex-wrap: nowrap;
-    padding-bottom: 4px; /* 留出一点空间给滚动条 */
+    padding-bottom: 4px; 
 }
 
-/* ==================== 1. 滚动条整体容器 ==================== */
 layout-row[scrollable="true"]::-webkit-scrollbar {
-    height: 10px; /* 稍微加高一点，留给箭头和滑块呼吸空间 */
+    height: 10px; 
 }
 
-/* ==================== 2. 滚动条轨道 ==================== */
 layout-row[scrollable="true"]::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.03); /* 极低的透明度，隐约看出轨道即可 */
+    background: rgba(255, 255, 255, 0.03); 
     border-radius: 20px;
-    margin: 0 4px; /* 让轨道两端缩进一点，不贴死边缘 */
+    margin: 0 4px; 
 }
 
-/* ==================== 3. 滚动条滑块（Thumb） ==================== */
 layout-row[scrollable="true"]::-webkit-scrollbar-thumb {
-    /* 核心：使用白色半透明，在深色/毛玻璃背景上呈现高光质感 */
+    
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
 
-    /* 技巧：通过上下透明边框，让滑块在视觉上变细，显得精致 */
+    
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     background-clip: padding-box;
 }
 
-/* 之前提到的 Hover 变色动画补丁 */
 layout-row[scrollable="true"]::-webkit-scrollbar-thumb:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* ==================== 4. 两端的箭头按钮（Buttons） ==================== */
 layout-row[scrollable="true"] {
-    /* 确保容器有足够的 padding-right，防止右侧箭头遮挡内容 */
+    
     padding-right: 4px;
 }
 
@@ -133,7 +128,7 @@ layout-row[scrollable="true"]::-webkit-scrollbar-button {
     border-radius: 4px;
 }
 
-/* 左端 - 只保留向左滚动的箭头 */
+
 layout-row[scrollable="true"]::-webkit-scrollbar-button:horizontal:decrement:start {
     display: block;
     width: 12px;
@@ -141,7 +136,7 @@ layout-row[scrollable="true"]::-webkit-scrollbar-button:horizontal:decrement:sta
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255,255,255,0.6)'><path d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/></svg>");
 }
 
-/* 右端 - 只保留向右滚动的箭头 */
+
 layout-row[scrollable="true"]::-webkit-scrollbar-button:horizontal:increment:end {
     display: block;
     width: 12px;
@@ -149,18 +144,18 @@ layout-row[scrollable="true"]::-webkit-scrollbar-button:horizontal:increment:end
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255,255,255,0.6)'><path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/></svg>");
 }
 
-/* 强行隐藏所有不该出现的无用配对按钮 */
+
 layout-row[scrollable="true"]::-webkit-scrollbar-button:horizontal:increment:start,
 layout-row[scrollable="true"]::-webkit-scrollbar-button:horizontal:decrement:end {
     display: none !important;
 }
 
-/* 箭头悬浮态 */
+
 layout-row[scrollable="true"]::-webkit-scrollbar-button:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* --- 子元素自定义对齐 (Modifier.align) --- */
+
 [align-self="TopStart"]      { justify-self: start;  align-self: start; }
 [align-self="TopCenter"]     { justify-self: center; align-self: start; }
 [align-self="TopEnd"]        { justify-self: end;    align-self: start; }
@@ -177,7 +172,7 @@ layout-row > [align-self="Top"]    { align-self: flex-start; }
 layout-row > [align-self="Center"] { align-self: center; }
 layout-row > [align-self="Bottom"] { align-self: flex-end; }
 
-/* --- Column 内部的子元素独立水平对齐 (Modifier.align) --- */
+
 layout-column > [align-self="Start"]  { align-self: flex-start; }
 layout-column > [align-self="Center"] { align-self: center; }
 layout-column > [align-self="End"]    { align-self: flex-end; }
